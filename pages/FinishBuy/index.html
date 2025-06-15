@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produto</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../ItemPage/style.css">
+  <style>
+    nav {
+      margin-top: -50px;
+    }
+    .produto {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button{
+      background-color: red;
+    }
+    
+
+
+    button:hover {
+      background-color: black;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <img class="gif" src="../../imagens/giffundo.gif" alt="">
+    <img class="bic" src="../../imagens/logo png.png" alt="">
+  </div>
+  <div class="noise"> 
+
+  </div>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <h1 id="menuButtun">Burnic</h1>
+      </div>
+      <div class="icons">
+        <label class="cart">
+          <input type="checkbox">
+          <i><i class="fa-solid fa-cart-shopping"></i></i>
+        </label>
+        <label class="hamburger">
+          <input type="checkbox">
+          <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path class="line" d="M7 16 27 16"></path>
+          </svg>
+        </label>
+      </div>
+      <div class="cartMenu" style="display: none;">
+
+      </div>
+      <div class="links">
+        <a class="link" href="#">Home</a>
+        <a class="link" href="./pages/AdminPage/ListaDeBics.html">Produtos</a>
+        <a class="link" href="#">Contato</a>
+      </div>
+      <div class="cartShop">
+        <div class="list">
+          <ul>
+            <li class="item">
+              <div class="box">
+                <img src="imagens/bigtoddy.jpg" alt="">
+                <div class="infos">
+                  <h1 class="name">
+                    Baphomet
+                  </h1>
+                  <p class="price"> 
+                    R$ 500.00
+                  </p>
+                </div>
+                <div class="funcs">
+                  <i class="fa-solid fa-trash delet-item"></i>
+                </div>
+              </div>
+            </li>
+            <li class="item">
+              <div class="box">
+                <img src="imagens/bigtoddy.jpg" alt="">
+                <div class="infos">
+                  <h1 class="name">
+                    Haddad
+                  </h1>
+                  <p class="price">
+                    R$ 400.00
+                  </p>
+                </div>
+                <div class="funcs">
+                  <i class="fa-solid fa-trash delet-item" ></i>
+                </div>
+              </div>    
+            </li>
+            <li class="item">
+              <div class="box">
+                <img src="imagens/bigtoddy.jpg" alt="">
+                <div class="infos">
+                  <h1 class="name">
+                    Haddad
+                  </h1>
+                  <p class="price">
+                    R$ 400.00
+                  </p>
+                </div>
+                <div class="funcs">
+                  <i class="fa-solid fa-trash delet-item" ></i>
+                </div>
+              </div>    
+            </li>
+            <li class="item">
+              <div class="box">
+                <img src="imagens/bigtoddy.jpg" alt="">
+                <div class="infos">
+                  <h1 class="name">
+                    Haddad
+                  </h1>
+                  <p class="price">
+                    R$ 400.00
+                  </p>
+                </div>
+                <div class="funcs">
+                  <i class="fa-solid fa-trash delet-item" ></i>
+                </div>
+              </div>    
+            </li>
+          </ul>
+        </div>
+        <div class="button-checkup">
+          <div class="infos-checkout">
+            <h1>Subtotal :</h1>
+            <p class="total-amount">R$ 00.00</p>
+          </div>
+          <div class="chechupk">
+            <a href="#">Finalizar compra</a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="produto" id="produto">
+    
+    </div>
+  </main>
+  
+
+  <script>
+    const loading = document.querySelector('.loading')
+    setTimeout(() => {
+      loading.style.display = 'none';
+    },1500)
+    const produtos = {
+      1: {
+        nome: 'Capa para Bic Baphomet',
+        preco: 150,
+        precoAntigo: 600,
+        imagem: '../../../imagens/Baphomet.jpg',
+      },
+      2: {
+        nome: 'capa para bic aleeeeeeee',
+        preco: 89.90,
+        precoAntigo: 129.90,
+        imagem: '../../../imagens/aleeeeeeee.jpg',
+      },
+      3: {
+        nome: 'capa para bic aleeeeeeee',
+        preco: 59.90,
+        precoAntigo: 0,
+        imagem: '../../../imagens/bigtoddy.jpg',
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const container = document.getElementById('produto');
+
+    let produto;
+
+    switch (id) {
+      case '1':
+      case '2':
+      case '3':
+        produto = produtos[id];
+        container.innerHTML = `
+        <div class="produto">
+          <div class="imgProduto">
+            <img src="${produto.imagem}" alt="${produto.nome}">
+          </div>
+          <div class="produtoInfo">
+            <h1>${produto.nome}</h1>
+            <h2 class="preco">
+              R$${produto.preco.toFixed(2)}
+              ${produto.precoAntigo ? `<s>R$${produto.precoAntigo.toFixed(2)}</s>` : ''}
+            </h2>
+          </div>
+
+          <div class="buttons">
+            <button class="button-buy" onclick="confirmarCompra(${id})">Finalizar</button>
+          </div>
+        </div>
+        `;
+        break;
+
+      default:
+        container.innerHTML = `<p>Produto não encontrado.</p>`;
+        break;
+    }
+
+    function confirmarCompra(id) {
+      loading.style.display = 'flex';
+      const prod = produtos[id];
+      const numeroPedido = Math.floor(Math.random() * 900000 + 100000);
+      setTimeout(() => {
+        loading.style.display = 'none';
+        Swal.fire({
+        title: `<p>Pedido aprovado</p>`,
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonText: `<p class=concluido>Ver comprovante</p>`,
+        cancelButtonText: 'Voltar à loja',
+        confirmButtonColor: '#000',
+        cancelButtonColor: '#666',
+        background: '#fff',
+        color: '#000',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/comprovante.html'; // Altere para seu comprovante
+        } else {
+          window.location.href = '/'; // Redireciona à loja
+        }
+      });
+      },2000)
+      
+    }
+  </script>
+
+</body>
+</html>

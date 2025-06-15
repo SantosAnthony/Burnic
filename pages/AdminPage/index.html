@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title href="../../index.html">Burnic</title>
+  <link rel="shortcut icon" href="../../imagens/logo-gabriel.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="https://kit.fontawesome.com/1ef79e8cdc.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="loading">
+    <img class="gif" src="../../imagens/giffundo.gif" alt="">
+    <img class="bic" src="../../imagens/logo png.png" alt="">
+  </div>
+  <div class="noise">
+
+  </div>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <h1 id="menuButtun">Burnic</h1>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="vitrado">
+        <div class="formBox">
+          <img id="preview" src="../../imagens/logo-gabriel.ico" alt="Prévia da imagem" />
+          <input type="file" id="imagem" accept="image/*" />
+          <label for="name"><p class="text">Nome do Produto:</p></label>
+          <input type="text" id="name" placeholder="Ex: Kendric" />
+          <label for="price"><p class="text">Preço:</p></label>
+          <input type="number" id="price" step="0.01" />
+          <label>
+            <input type="checkbox" id="promo" />
+            <p class="text">Está em promoção?</p>
+          </label>
+          <label for="promoPrice"><p class="text">Preço Promocional:</p></label>
+          <input type="number" id="promoPrice" step="0.01" />
+        
+          <label for="classe"><p class="text">Classe visual:</p></label>
+          <select id="classe">
+            <option value="sale">sale</option>
+            <option value="sold">sold</option>
+          </select>
+          <button id="enviar">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../../script.js"></script>
+<script src="script.js"></script>
+
+</html>

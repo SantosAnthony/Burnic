@@ -1,0 +1,142 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.container{
+  backdrop-filter: blur(1px);
+  font-family: 'Million';
+}
+
+.formBox{
+  margin-top: 190px;
+  padding:30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(37, 37, 37, 0.938);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.63);
+  min-height: 400px;
+}
+
+
+h1 {
+  color: #ff4500;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  .text{
+    font-size: 10px;
+    color: white;
+  }
+
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: none;
+  width: 80%;
+  outline: none;
+  font-family: "million";
+  font-size: 12px;
+  color: #000000ce;
+  font-weight: lighter;
+}
+
+select{
+  width: 85%;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+input[type="file"] {
+  font-family: "Poppins";
+  color: white;
+  &::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  &::file-selector-button:hover {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+}
+
+#preview {
+  position: absolute;
+  top: 100px;
+  margin-top: 15px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.445);
+}
+
+button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "million";
+  font-size: 10px;
+}
+
+button:hover {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+
+.error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  .errorImg{
+    z-index: -1;
+    height: 250px;
+    background-image: url("imagens/404.png");
+    background-size:contain;
+    background-position: center;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.315));
+  }
+  .errorText{
+    color: rgb(0, 0, 0);
+    font-family: 'Million';
+    font-weight: lighter;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+}

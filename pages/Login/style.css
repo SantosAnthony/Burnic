@@ -1,0 +1,129 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.logo{
+  margin:  -20px auto 0 auto;
+  img{
+    width: 20px;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.315));
+    position: relative;
+    top: 0;
+    right: -149px;
+  }
+  h1{
+    font-size: 30px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164);
+  }
+}
+
+.Halfs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(1px);
+}
+
+.box_login,.box_register{
+  width: 200px;
+  padding:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 5px;
+  box-shadow: 5px 5px 0px 1px rgb(0, 0, 0),5px 5px 0px 5px rgb(255, 255, 255),5px 5px 0px 10px rgb(0, 0, 0),0px 0px 10px black;
+  min-height: 350px;
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .open{
+      transition: 0.5s;
+      width: 100px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.226));
+      mix-blend-mode: multiply;
+    }
+    .closed{
+      transition: 0.5s;
+      width: 100px;
+      height: 5px;
+      padding-top: 21.5px;
+      padding-bottom: 21.5px;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.226));
+    }
+    h2{
+      text-align: center;
+      color: #000000;
+      font-family: 'Million';
+      font-weight: lighter;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
+    }
+    input{
+      margin-top: 10px;
+      width: 80%;
+      height: 30px;
+      border-radius: 5px;
+      padding: 10px;
+      outline: none;
+      border: none;
+      box-shadow: 5px 5px 0px 2px rgb(0, 0, 0),0px 0px 10px rgba(0, 0, 0, 0.185);
+      font-family: "montserrat";
+      color: rgb(34, 34, 34);
+      font-size: 15px;
+    }
+    .show{
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i{
+        position: absolute;
+        top: 28px;
+        right: 20px;
+        cursor: pointer;
+        color: rgb(139, 139, 139);
+        font-size: 15px;
+      }
+    }
+
+  }
+  button{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "million";
+    font-size: 10px;
+    height: 40px;
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.445),0px 2px 1px  rgba(0,0,0,0.2), 0px 1px 1px  rgba(0,0,0,0.14), 0px 1px 3px  rgba(0,0,0,0.12);
+    border: 1px solid white;
+  }
+  input[type="submit"]:hover{
+    background-color: #e7e7e7;
+    color: rgb(0, 0, 0);
+  }
+
+  
+  
+}
+
+a{
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+}
