@@ -80,6 +80,74 @@ switch(id){
       </div>
     `;
     break;
+  case "5":
+    lista.innerHTML = `
+      <div class="produto">
+        <div class="imgProduto">
+          <img src="../../imagens/Suquita.jpg" alt="">
+        </div>
+        <div class="produtoInfo">
+          <h1>Capa para bic suquita</h1>
+          <h2>R$150.00</h2>
+        </div>
+        <div class="buttons">
+          <button class="button-buy" data-id="5">Comprar</button>
+          <button class="button-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+    `;
+    break;
+  case "6":
+    lista.innerHTML = `
+      <div class="produto">
+        <div class="imgProduto">
+          <img src="../../imagens/Risadinha.jpg" alt="">
+        </div>
+        <div class="produtoInfo">
+          <h1>Capa para bic Risadinha</h1>
+          <h2>R$150.00</h2>
+        </div>
+        <div class="buttons">
+          <button class="button-buy" data-id="6">Comprar</button>
+          <button class="button-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+    `;
+    break;
+  case "7":
+    lista.innerHTML = `
+      <div class="produto">
+        <div class="imgProduto">
+          <img src="../../imagens/Pipoca.jpg" alt="">
+        </div>
+        <div class="produtoInfo">
+          <h1>Capa para bic Pipoca</h1>
+          <h2>R$150.00</h2>
+        </div>
+        <div class="buttons">
+          <button class="button-buy" data-id="7">Comprar</button>
+          <button class="button-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+    `;
+    break;
+  case "8":
+    lista.innerHTML = `
+      <div class="produto">
+        <div class="imgProduto">
+          <img src="../../imagens/boso.jpg" alt="">
+        </div>
+        <div class="produtoInfo">
+          <h1>Capa para bic Boso</h1>
+          <h2>R$150.00</h2>
+        </div>
+        <div class="buttons">
+          <button class="button-buy" data-id="8">Comprar</button>
+          <button class="button-cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+    `;
+    break;
   default:
     console.log('Produto não encontrado');
 }
