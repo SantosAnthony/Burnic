@@ -1,4 +1,4 @@
-const url = 'http://192.168.18.168:3000/produtos'
+const url = 'https://server-burnic.onrender.com/produtos'
 
 
 

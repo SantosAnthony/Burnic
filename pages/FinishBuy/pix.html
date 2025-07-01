@@ -157,6 +157,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     
+
     const url = window.location.search;
     const urlParams = new URLSearchParams(url);
     const id = urlParams.get('id');
@@ -168,7 +169,7 @@
         const cepOrigem = 67200; // Marituba-PA
         const cepNum = parseInt(cepDestino.replace(/\D/g, '').slice(0, 5));
 
-        if (isNaN(cepNum)) return 1;
+        if (isNaN(cepNum)) return 50;
 
         const distancia = Math.abs(cepOrigem - cepNum);
         const taxaBase = 10;
@@ -190,142 +191,43 @@
     const res = await axios.get(search)
     const produtos = res.data
     try {
+
+      
       
 
       produtos.forEach((produto) => {
-        // <p id="freteText">Frete: --</p>
         lista.innerHTML = `
-          <div class="container">
+          <div class="container2">
           <div class="image">
             <img src="${produto.image}" alt="">
           </div>
           <div class="infos">
-            <h1>Capa para bic ${produto.name}</h1>
               ${produto.promo ? `<h2>R$${produto.promoPrice}.00<s>R$${produto.price}.00</s></h2>` : `<h2>R$${produto.price}.00</h2>`}
-          </div>
-          <!-- dados para envio-->
-          <div class="dados">
-            <h1>Endereço de entrega</h1>
-            <h5>*Preencher todos os campos*</h5>
-            <div class="cep">
-              <input id="cep" type="number" name="cep" placeholder="CEP" required>
-              
-
-              
-            </div>
-            <div class="rua">
-              <input type="text" id="rua" placeholder="Rua" required>
-            </div>
-            <div class="bairro">
-              <input type="text" id="bairro" placeholder="Bairro" required>
-            </div>
-            <div class="cidade">
-              <input type="text" id="cidade" placeholder="Cidade" required>
-            </div>
-            <div class="numero">
-              <input type="text" id="numero" placeholder="Número" required>
-            </div>
           </div>
           <div class="button-checkup">
           <div class="infos-checkout">
             <h1>Subtotal :</h1>
-            <p class="total-final">R$ ${produto.promo ? produto.promoPrice : produto.price}</p>
+            <p class="total-final">R$ ${produto.promo ? produto.promoPrice + 20 : produto.price + 20}</p>
           </div>
-          <div class="chechupk">
-            <button id="buscarFrete" class="freteButton">Verificar</button>
-            <button class="button-buy"  id="finalizarCompra" disabled data-id="${produto.id}">Finalizar compra</button>
-            <button class="pixButton freteButton" data-id="${produto.id}" >Pagar com pix</button>
+          <div class="pixyy">
+            <p class="pixy" style="font-family: 'Courier New; background-color: gray;', Courier, monospace">00020126580014BR.GOV.BCB.PIX0...</p>
           </div>
+          <button class="copy" >Copiar!</button>
         </div>
         </div>
         `;
       });
 
-      const buttonBuy = document.querySelector('.pixButton');
-      if (buttonBuy) {
-        buttonBuy.addEventListener('click', () => {
-          const productId = buttonBuy.getAttribute('data-id');
-          window.location.href = `../../pages/FinishBuy/pix.html?id=${productId}`;
-          loading.style.display = 'flex';
-        });
-      }
-
-      function mostrarFrete() {
-        const cep = document.getElementById('cep').value;
-        const valorFrete = calcularFretePorDistancia(cep);
-        document.getElementById('freteText').innerText = `Frete: R$ ${valorFrete.toFixed(2).replace('.', ',')}`;
-        return valorFrete
-      }
-
-      document.getElementById('cep').addEventListener('change', ()=>{
-        mostrarFrete();
-        const total = produtos[0].promo ? produtos[0].promoPrice + mostrarFrete() : produtos[0].price + mostrarFrete();
-        document.querySelector('.total-final').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`
-        
-      });
-
-      document.getElementById('buscarFrete').addEventListener('click', async () => {
-        if(
-        document.getElementById('cep').value == '' &&
-        document.getElementById('bairro').value == '' &&
-        document.getElementById('rua').value == '' &&
-        document.getElementById('cidade').value == '' &&
-        document.getElementById('numero').value == ''
-      )
-      {
-        document.querySelector(".button-buy").disabled = true;
-      }
-      else{
-        document.querySelector(".button-buy").disabled = false;
-      }
-        
-        const dados = {
-          nome: produtos[0].name,
-          cep: document.getElementById('cep').value,
-          rua: document.getElementById('rua').value,
-          bairro: document.getElementById('bairro').value,
-          cidade: document.getElementById('cidade').value,
-          numero: document.getElementById('numero').value,
-          frete: mostrarFrete()
-        };
-
-        await fetch('http://localhost:3000/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(dados)
-        });
-
-      });
-
-
-      const stripe = Stripe('pk_live_51RfgpmJM03pNknz4ve3iEMK1drdSvmNWc95ujbPNhS3I9OdhFqKdjJFxIgXYx5b4iO8lqmcuwzUcuk9TiU6vUy4r00R085H1Xl');
-      document.querySelector('.button-buy').addEventListener('click', async (e) => {
-        e.preventDefault();
-
-        const nomeProduto = document.querySelector('.infos h1').innerText;
-        const valorTotal = produtos[0].promo ? produtos[0].promoPrice + mostrarFrete() : produtos[0].price + mostrarFrete();
-        
-
-        const res = await fetch('http://localhost:3000/payment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: nomeProduto, price: valorTotal })
-        });
-
-        const session = await res.json();
-        await stripe.redirectToCheckout({ sessionId: session.id });
-
-
-      });
-
-    
-
-       
-
-
+      document.querySelector('.copy').addEventListener('click', () => {
+        navigator.clipboard.writeText('00020126580014BR.GOV.BCB.PIX013629bf8abf-018f-4c77-a5db-d700ec3fbf5e5204000053039865406150.005802BR5925LUIZ GABRIEL VALENTE DE A6008MARITUBA622605226yJV0inchw9Q223Py3txMo630487B6');
+        alert('Copiado com sucesso!');
+      })
 
       
+
       
+
+
       
     } catch (err) {
       let div = document.createElement('div');

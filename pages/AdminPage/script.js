@@ -1,4 +1,4 @@
-const url = 'http://192.168.18.168:3000/produtos'
+const url = 'https://server-burnic.onrender.com/produtos'
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id')
 
@@ -58,7 +58,7 @@ if(productId){
     const produto = { name, price, promoPrice, promo, classe, image };
 
     async function edit(){
-      const res = await fetch(`http://192.168.18.168:3000/produtos/${productId}`, {
+      const res = await fetch(`https://server-burnic.onrender.com/produtos/${productId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(produto)
@@ -122,7 +122,7 @@ else{
     const produto = { name, price, promoPrice, promo, classe, image };
 
     const res = async () => {
-      const response = await fetch('http://192.168.18.168:3000/produtos', {
+      const response = await fetch('https://server-burnic.onrender.com/produtos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(produto)

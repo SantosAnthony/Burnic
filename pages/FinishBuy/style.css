@@ -1,0 +1,160 @@
+body{
+  min-height: 100vh;
+}
+
+.container2{
+  margin-top: -100px;
+}
+.container{
+  margin-top: 40px;
+  .image{
+    img{
+      width: 100%;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 1px solid black;
+    h1{
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-family: 'Million';
+      font-size: 20px;
+      letter-spacing: 10px;
+      font-weight: lighter;
+    }
+    h2{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: rgb(0, 0, 0);
+      font-family: 'Poppins';
+      font-size: 23px;
+      s{
+        color: rgb(255, 0, 0);
+        font-size: 15px;
+      }
+    }
+    p{
+      color: rgb(0, 0, 0);
+      font-weight: regular;
+      font-size: 12px;
+      font-family: 'Poppins';
+    }
+    
+  }
+
+  .freteButton{
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: "million";
+      font-size: 10px;
+      height: 40px;
+      box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.445),0px 2px 1px  rgba(0,0,0,0.2), 0px 1px 1px  rgba(0,0,0,0.14), 0px 1px 3px  rgba(0,0,0,0.12);
+      border: 1px solid white;
+    }
+
+  .dados{
+    margin-top: 20px;
+    h1{
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-family: 'Million';
+      font-size: 20px;
+      letter-spacing: 10px;
+      font-weight: lighter;
+    }
+    input{
+      margin: 10px;
+      width: 80%;
+      height: 30px;
+      border-radius: 5px;
+      padding: 10px;
+      outline: none;
+      border: none;
+      box-shadow: 5px 5px 0px 2px rgb(0, 0, 0),0px 0px 10px rgba(0, 0, 0, 0.185);
+      font-family: "montserrat";
+      color: rgb(34, 34, 34);
+      font-size: 15px;
+    }
+    
+    
+  }
+
+.button-checkup{
+  bottom: 40px;
+  padding:10px 0px 10px 0px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .infos-checkout{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    h1{
+      font-size: 15px;;
+      letter-spacing: 1px;
+      color: #000000;
+      font-weight: normal;
+    }
+    p{
+      font-size: 15px;
+      font-family: 'Montserrat';
+      font-weight: bolder;
+    }
+  }
+  .chechupk{
+    .button-buy{
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: "million";
+      font-size: 10px;
+      height: 40px;
+      box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.445),0px 2px 1px  rgba(0,0,0,0.2), 0px 1px 1px  rgba(0,0,0,0.14), 0px 1px 3px  rgba(0,0,0,0.12);
+      border: 1px solid white;
+      text-decoration: none;
+    }
+    .button-buy:disabled{
+      background-color: #e7e7e7;
+      color: rgb(0, 0, 0);
+    }
+    margin-bottom: 30px;
+  }
+  .chechupk:hover{
+    background-color: #e7e7e7;
+    color: black;
+  }
+}
+
+.errorImg{
+  width: 200px;
+}
+
+.copy{
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: black;
+}

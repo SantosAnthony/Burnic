@@ -1,4 +1,4 @@
-const url = 'http://192.168.18.168:3000/produtos'
+const url = 'https://server-burnic.onrender.com/produtos'
 
 
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         b.innerHTML = 'Deletar <i class="fa-solid fa-trash"></i>';
         b.addEventListener('click',() => {
           const rest = async () =>{
-            const res = await axios.delete(`http://192.168.18.168:3000/produtos/${produto.id}`);
+            const res = await axios.delete(`https://server-burnic.onrender.com/produtos/${produto.id}`);
           }
           try {
             Swal.fire({
